@@ -130,8 +130,12 @@ def setup_package():
     version = os.getenv('GO_PIPELINE_LABEL', VERSION)
 
     install_requires = []
-    extras_require = {'aws': ['boto'], 'etcd': ['python-etcd'], 'consul': ['python-consul'],
-                      'exhibitor': ['kazoo'], 'zookeeper': ['kazoo'], 'kubernetes': ['kubernetes']}
+    extras_require = {'aws': ['boto'],
+                      'etcd': ['python-etcd'],
+                      'consul': ['python-consul'],
+                      'exhibitor': ['kazoo'],
+                      'zookeeper': ['kazoo'],
+                      'kubernetes': ['kubernetes', 'google-api-python-client']}
 
     for r in get_install_requirements('requirements.txt'):
         extra = False
